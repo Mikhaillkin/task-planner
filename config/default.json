@@ -1,0 +1,6 @@
+{
+  "port": 5000,
+  "jwtSecret": "mikhaillkin-planner",
+  "mongoUri": "mongodb+srv://mikhaillkin:gigena123@cluster0.byt8u.mongodb.net/planner2022?retryWrites=true&w=majority",
+  "baseUrl": "http://localhost:5000"
+}
