@@ -56,4 +56,26 @@ router.get('/:id',
     }
 });
 
+
+//  /api/task + /delete
+router.delete('/delete',
+    auth,
+    async (req,res) => {
+        try {
+            console.log(req.body.id);
+
+            const task = await Task.deleteOne({ id:req.body.id }).then(console.log('Запись удалена'));
+
+            // if(!task) {
+            //     return res.status(400).json({ message: 'Такой записи нет' });
+            // }
+
+            // await task.remove().then(console.log('Запись удалена'));
+
+            res.status(200).json({ message: 'Удаление прошло успешно' });
+        } catch (e) {
+            res.status(500).json({ message: "Что-то пошло не так" });
+        }
+    });
+
 module.exports = router;

@@ -1,0 +1,27 @@
+.header {
+  //background-color: rgb(32,116,223);
+  background-color: #000d24;
+  color: white;
+  grid-template-area: header;
+  display: flex;
+}
+
+
+.header__burger {
+  align-self: center;
+  .burger {
+    font-size: 32px;
+    margin-left: 25px;
+    cursor: pointer;
+  }
+}
+
+.header__exit {
+  align-self: center;
+  //justify-self: end;
+  .logout {
+    font-size: 20px;
+    margin-left: 25px;
+    cursor: pointer;
+  }
+}

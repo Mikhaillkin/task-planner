@@ -1,0 +1,25 @@
+.root {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  //padding-top: 5rem;
+  //padding-top: 15vh;
+  padding-top: 8%;
+}
+
+.modal {
+  //padding: 2rem;
+  width: 600px;
+  height: 450px;
+  border-radius: 5px;
+  background: #fff;
+  display: grid;
+  grid-template: 15% 1fr 5% / 1fr;
+}
+
+

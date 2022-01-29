@@ -1,0 +1,40 @@
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: .5rem;
+  list-style: none;
+  flex-wrap: nowrap;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+
+.item__check {
+  margin-right: 1rem;
+}
+
+.item__leftsidecontent {
+  width: 70%;
+}
+
+.item__text {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.item__edit {
+  justify-self: end;
+}
+
+.item__delete {
+  justify-self: end;
+}
+
+.item__check,.item__edit,.item__delete {
+  font-size: 32px;
+  &:hover {
+    opacity: 0.6;
+  }
+}
