@@ -9,7 +9,7 @@ import './TaskItem.scss';
 // import {removeCurrentUserTaskAction} from "../../store/tasksReducer";
 
 
-const TaskItem = ({id,title,text,time,userIdOwner,index}) => {
+const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList}) => {
     // const dispatch = useDispatch();
     // const currentUserTasks = useSelector( state => state.tasksReducer.currentUserTasks );
 
@@ -29,6 +29,7 @@ const TaskItem = ({id,title,text,time,userIdOwner,index}) => {
             });
 
             // dispatch(removeCurrentUserTaskAction(id));
+            onUpdateTasksList && onUpdateTasksList();
         } catch (e) {}
     }, [token,request]);
 

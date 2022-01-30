@@ -1,9 +1,10 @@
-.taskadd-content {
+.create-task {
   padding: 0 5% 5% 5%;
   color: black;
 }
 
-.taskadd-form {
+.taskadd-form-group__create-title,
+.taskadd-form-group__create-text {
   width: 100%;
   label {
     display: block;
@@ -13,7 +14,8 @@
   input {}
 }
 
-.taskadd-form {
+.taskadd-form-group__create-title,
+.taskadd-form-group__create-text  {
   input,textarea {
     width: 100%;
     box-sizing: border-box;
@@ -30,10 +32,10 @@
   }
 }
 
-.taskadd-form__btn-add {
+.taskadd-form-group__btn-create-task {
   display: flex;
   justify-content: end;
-  .btn-add {
+  .btn-create-task {
     background: white;
     color: black;
     //border: 1px solid black;
@@ -46,7 +48,7 @@
   }
 }
 
-.title-createpage {
+.create-task__page-title {
   font-size: 24px;
   font-weight: 900;
   //margin-bottom: 2rem;

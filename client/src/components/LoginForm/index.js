@@ -9,6 +9,7 @@ import {useAuth} from "../../hooks/auth.hook";
 import './LoginForm.scss';
 
 const LoginForm = ({ modalTitle }) => {
+    const dispatch = useDispatch();
     const history = useHistory();
     const message = useMessage();
     const { login } = useAuth();
@@ -21,8 +22,7 @@ const LoginForm = ({ modalTitle }) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
 
-    const dispatch = useDispatch();
-    const handleClickReg = () => { dispatch({type:'TOGLLER_FOR_CHANGE_AUTHFORM'}) };
+    const handleClickRegister = () => { dispatch({type:'TOGLLER_FOR_CHANGE_AUTHFORM'}) };
 
 
     useEffect(() => {
@@ -40,13 +40,13 @@ const LoginForm = ({ modalTitle }) => {
         } catch (e) {}
     }
 
-    const handleAuthUser = async (event) => {
+    const loginHandler = async (event) => {
         event.preventDefault();
         await fetchAuthorization();
         history.push('/');
     }
 
-    const handlePress = async event => {
+    const handlePressEnter = async event => {
         if(event.key === 'Enter') {
             await fetchAuthorization();
             history.push('/');
@@ -59,7 +59,7 @@ const LoginForm = ({ modalTitle }) => {
                 <h1><strong>{ modalTitle }</strong></h1>
             </div>
             <div className="loginform-content">
-                <form action="#" onSubmit={handleAuthUser} >
+                <form action="#" onSubmit={loginHandler} >
                     <div className="loginform-form">
                         <label htmlFor="email">Email</label>
                         <input
@@ -80,14 +80,15 @@ const LoginForm = ({ modalTitle }) => {
                             id="password"
                             placeholder="Введите пароль"
                             onChange={onChangeFormHandler}
-                            onKeyPress={handlePress}
+                            onKeyPress={handlePressEnter}
                         />
                     </div>
                     <div className="loginform__btns">
                         <button
                             type="submit"
                             className="btn-auth reg-btn"
-                            onClick={handleClickReg}
+                            disabled={loading}
+                            onClick={handleClickRegister}
                         >
                             Регистрация
                         </button>
@@ -95,7 +96,7 @@ const LoginForm = ({ modalTitle }) => {
                             type="submit"
                             className="btn-auth"
                             disabled={loading}
-                            onClick={handleAuthUser}
+                            onClick={loginHandler}
                         >
                             Войти
                         </button>

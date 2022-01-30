@@ -35,6 +35,10 @@ const TasksList = () => {
     }, [getTasks]);
 
 
+    const handleUpdateTasksList = () => {
+        getTasks();
+    }
+
 
     if (!ready) {
         return <Loader />;  //Определи компонент лоадер и вызови его в return здесь
@@ -70,6 +74,7 @@ const TasksList = () => {
                                 time={task.time}
                                 userIdOwner={task._id}
                                 index={index}
+                                onUpdateTasksList={handleUpdateTasksList}
                             />
                         )
                     })
