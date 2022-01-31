@@ -1,13 +1,16 @@
 import React, {useCallback, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import {useHttp} from "../../hooks/http.hook";
+import { useSelector,useDispatch } from 'react-redux';
 
 import cn from 'classnames';
 import { CheckSquareOutlined,DeleteOutlined,EditOutlined } from '@ant-design/icons';
 import './TaskItem.scss';
+import {removeCurrentUserTaskAction} from "../../store/tasksReducer";
 
 
 const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, doneStateItem}) => {
+    const dispatch = useDispatch();
     const [doneItem,setDoneItem] = useState(doneStateItem);
     const history = useHistory();
     const {request} = useHttp();
@@ -21,7 +24,7 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, done
                 Authorization: `Bearer ${token}`
             });
 
-            // dispatch(removeCurrentUserTaskAction(id));
+            dispatch(removeCurrentUserTaskAction(id));
             onUpdateTasksList && onUpdateTasksList();
         } catch (e) {}
     }, [token,request]);
@@ -32,7 +35,6 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, done
                 Authorization: `Bearer ${token}`
             });
 
-            // onUpdateTasksList && onUpdateTasksList();
             setDoneItem( prevState => !prevState );
         } catch (e) {}
     } );

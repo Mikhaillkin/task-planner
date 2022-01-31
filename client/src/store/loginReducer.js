@@ -8,7 +8,7 @@ const CHANGE_AUTH_STATE = 'CHANGE_AUTH_STATE';
 const SET_TOKEN = 'SET_TOKEN';
 const SET_USERID = 'SET_USERID';
 
-export const authReducer = (state = defaultState, action) => {
+export const loginReducer = (state = defaultState, action) => {
     switch (action.type) {
         case CHANGE_AUTH_STATE:
             return { ...state, isAuthenticated: !state.isAuthenticated };

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {useHttp} from "../../hooks/http.hook";
 import {useAuth} from "../../hooks/auth.hook";
 import {useHistory} from "react-router-dom";
@@ -7,18 +7,17 @@ import {useHistory} from "react-router-dom";
 import GridLayout from "../../components/GridLayout";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Loader from "../../components/Loader";
 
 import {SendOutlined} from "@ant-design/icons";
 import './CreatePage.scss';
-// import {addCurrentUserTaskAction} from "../../store/tasksReducer";
+
 
 const CreatePage = () => {
     // const dispatch = useDispatch();
     const [addFormTitle, setAddFormTitle] = useState('');
     const [addFormText, setAddFormText] = useState('');
     const {request} = useHttp();
-    const {token} = useAuth();
+    // const {token} = useAuth();
     const userData = JSON.parse(localStorage.getItem('userData'));
     const history = useHistory();
 

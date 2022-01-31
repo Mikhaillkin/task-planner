@@ -1,21 +1,23 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {useHttp} from "../../hooks/http.hook";
-// import { useSelector,useDispatch } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import {fetchCurrentUserTasksAction} from "../../store/tasksReducer";
 
 import TaskItem from "../TaskItem";
 import Loader from "../Loader";
 
 import './TasksList.scss';
-// import {addCurrentUserTasksAction} from "../../store/tasksReducer";
 
 
 const TasksList = () => {
-    // const dispatch = useDispatch();
-    // const currentUserTasks = useSelector( state => state.tasksReducer.currentUserTasks );
+    const dispatch = useDispatch();
+    const currentUserTasks = useSelector( state => state.tasksReducer.currentUserTasks );
     const {loading,request,ready} = useHttp();
-    const [tasks,setTasks] = useState([]);
+    const [tasks,setTasks] = useState(currentUserTasks);
     const userData = JSON.parse(localStorage.getItem('userData'));
     const token = userData && userData.token ? userData.token : '';
+
+    console.log('currentUserTasks: ',currentUserTasks);
 
     const getTasks = useCallback(async () => {
         try {
@@ -23,8 +25,8 @@ const TasksList = () => {
                 Authorization: `Bearer ${token}`
             });
 
-            console.log(data);
-            // dispatch(addCurrentUserTasksAction(data));
+            console.log('Tasks from Server: ',data);
+            dispatch(fetchCurrentUserTasksAction(data));
 
             setTasks(data);
         } catch (e) {}

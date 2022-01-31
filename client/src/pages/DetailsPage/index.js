@@ -29,7 +29,7 @@ const DetailsPage = () => {
             setTask(data);
         } catch (e) {
         }
-    }, [token, userIdOwner, request])
+    }, [token, userIdOwner, request]);
 
     useEffect(() => {
         getTask();
