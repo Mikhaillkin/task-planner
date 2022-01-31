@@ -69,12 +69,6 @@ const RegForm = ({ modalTitle }) => {
                     </div>
                     <div className="regform__btns">
                         <button
-                            className="btn-auth reg-btn"
-                            onClick={handleClickReg}
-                        >
-                            Войти
-                        </button>
-                        <button
                             type="submit"
                             className="btn-auth"
                             onClick={registerHandler}
@@ -84,6 +78,12 @@ const RegForm = ({ modalTitle }) => {
                         </button>
                     </div>
                 </form>
+                <button
+                    className="btn-auth reg-btn"
+                    onClick={handleClickReg}
+                >
+                    Войти
+                </button>
             </div>
         </>
     );

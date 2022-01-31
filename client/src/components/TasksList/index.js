@@ -74,6 +74,7 @@ const TasksList = () => {
                                 time={task.time}
                                 userIdOwner={task._id}
                                 index={index}
+                                doneStateItem={task.done}
                                 onUpdateTasksList={handleUpdateTasksList}
                             />
                         )

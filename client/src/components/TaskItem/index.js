@@ -1,25 +1,18 @@
 import React, {useCallback, useState} from 'react';
-import {useHistory, useParams} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import {useHttp} from "../../hooks/http.hook";
-// import { useSelector,useDispatch } from 'react-redux';
 
 import cn from 'classnames';
 import { CheckSquareOutlined,DeleteOutlined,EditOutlined } from '@ant-design/icons';
 import './TaskItem.scss';
-// import {removeCurrentUserTaskAction} from "../../store/tasksReducer";
 
 
-const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList}) => {
-    // const dispatch = useDispatch();
-    // const currentUserTasks = useSelector( state => state.tasksReducer.currentUserTasks );
-
-    const [doneItem, setDoneItem] = useState(false);
+const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, doneStateItem}) => {
+    const [doneItem,setDoneItem] = useState(doneStateItem);
     const history = useHistory();
     const {request} = useHttp();
     const userData = JSON.parse(localStorage.getItem('userData'));
     const token = userData && userData.token ? userData.token : '';
-
-    // console.log('CurrentUserTasks: ',currentUserTasks);
 
 
     const deleteTask = useCallback(async (id) => {
@@ -33,16 +26,23 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList}) => 
         } catch (e) {}
     }, [token,request]);
 
-    // const handleDeleteTask = (id) => {
-    //     console.log(id);
-    //     dispatch(removeTaskAction(id));    Здесь нужно будет логика по удалению записи по id из MongoDB
-    // }
+    const updateTaskDoneState = useCallback( async (id,userIdOwner) => {
+        try {
+            const data = await request('api/task/done','POST', { id:id, userIdOwner: userIdOwner }, {
+                Authorization: `Bearer ${token}`
+            });
+
+            // onUpdateTasksList && onUpdateTasksList();
+            setDoneItem( prevState => !prevState );
+        } catch (e) {}
+    } );
 
     return (
         <>
             <li className="task__item" >
                 <span className="item__leftsidecontent">
-                    <CheckSquareOutlined className="item__check"  onClick={ () => setDoneItem(prevState => !prevState) } />
+                    {/*<CheckSquareOutlined className="item__check"  onClick={ () => setDoneItem(prevState => !prevState) } />*/}
+                    <CheckSquareOutlined className="item__check"  onClick={ () => updateTaskDoneState(id,userIdOwner) } />
                     <span className={cn({['item__text']: doneItem})}>
                         <strong className="item__number">{ `${index + 1})` }</strong>
                         &nbsp;

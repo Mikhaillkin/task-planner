@@ -86,14 +86,6 @@ const LoginForm = ({ modalTitle }) => {
                     <div className="loginform__btns">
                         <button
                             type="submit"
-                            className="btn-auth reg-btn"
-                            disabled={loading}
-                            onClick={handleClickRegister}
-                        >
-                            Регистрация
-                        </button>
-                        <button
-                            type="submit"
                             className="btn-auth"
                             disabled={loading}
                             onClick={loginHandler}
@@ -102,6 +94,13 @@ const LoginForm = ({ modalTitle }) => {
                         </button>
                     </div>
                 </form>
+                <button
+                    className="btn-auth reg-btn"
+                    disabled={loading}
+                    onClick={handleClickRegister}
+                >
+                    Регистрация
+                </button>
             </div>
         </>
     );

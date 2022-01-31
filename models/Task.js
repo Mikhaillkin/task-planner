@@ -11,6 +11,7 @@ const taskSchema = new Schema({
     title: { type: String, default: '' },
     text: { type: String, required: true, default: '' },
     time: { type: String, default: '' },
+    done: { type: Boolean, default: false },
     owner: { type:ObjectId, ref:'Users' }
 });
 

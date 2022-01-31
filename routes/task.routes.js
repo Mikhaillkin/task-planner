@@ -64,7 +64,7 @@ router.delete('/delete',
         try {
             console.log(req.body.id);
 
-            const task = await Task.deleteOne({ id:req.body.id }).then(console.log('Запись удалена'));
+            await Task.deleteOne({ id:req.body.id }).then(console.log('Запись удалена'));
 
             // if(!task) {
             //     return res.status(400).json({ message: 'Такой записи нет' });
@@ -77,5 +77,51 @@ router.delete('/delete',
             res.status(500).json({ message: "Что-то пошло не так" });
         }
     });
+
+
+//  /api/task + /done
+router.post('/done',
+    auth,
+    async (req,res) => {
+        try {
+            console.log(req.body.userIdOwner);
+
+            const task = await Task.findById(req.body.userIdOwner);
+            // await Task.deleteOne({ id:req.body.id }).then(console.log('Запись удалена'));
+
+
+            // if(task && task.done === false) {
+            //     task.done = true;
+            // } else if (task && task.done === true) {
+            //     task.done = false;
+            // }
+
+            task && task.done === false ? task.done = true : task.done = false;
+
+            console.log('Updated task: ',task);
+
+            await task.save().then(console.log('Task Updated'));
+
+            // res.status(200).json({ message: "Флаг изменен" });
+            res.status(200).json({ task });
+        } catch (e) {
+            res.status(500).json({ message: "Что-то пошло не так" });
+        }
+    });
+
+//  /api/task + /taskstate
+// router.get('/taskstate',
+//     auth,
+//     async (req,res) => {
+//         try {
+//             const task = await Task.findById(req.body.userIdOwner);
+//
+//             console.log(task);
+//
+//             res.json(task);
+//         } catch (e) {
+//             res.status(500).json({ message: "Что-то пошло не так" });
+//         }
+//     });
 
 module.exports = router;
