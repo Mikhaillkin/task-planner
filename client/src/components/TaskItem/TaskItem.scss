@@ -16,13 +16,23 @@ li {
 }
 
 .item__leftsidecontent {
-  width: 70%;
+  min-width: 300px;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.item__text {
+.item__done {
   color: gray;
   text-decoration: line-through;
 }
+
+//.text-border {
+//  white-space: nowrap;
+//  overflow: hidden;
+//  text-overflow: ellipsis;
+//}
 
 .item__edit {
   justify-self: end;

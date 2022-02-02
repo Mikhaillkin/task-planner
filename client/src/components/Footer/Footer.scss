@@ -1,14 +1,13 @@
 .footer {
-  //background-color: rgb(32,116,223);
   background-color: #000d24;
   color: white;
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   grid-template-area: footer;
 }
 
 .footer__copy {
-  grid-column: 1/4 ;
   font-size: 18px;
   margin-left: 25px;
-  align-self: center;
 }

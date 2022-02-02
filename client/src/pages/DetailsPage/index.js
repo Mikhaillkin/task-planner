@@ -13,7 +13,7 @@ import './DetailsPage.scss';
 
 const DetailsPage = () => {
     const history = useHistory();
-    const {request, loading, ready} = useHttp();
+    const {request, ready} = useHttp();
     const [task, setTask] = useState(null);
     const userData = JSON.parse(localStorage.getItem('userData'));
     const token = userData.token;
@@ -45,20 +45,21 @@ const DetailsPage = () => {
         );
     }
 
-    const handleClickReturn = () => {
-        history.push('/');
-    }
 
     return (
         <GridLayout>
             <Header/>
             <div className="task-details">
-                <h1 className="task-details__page-title">Подробнее о задаче</h1>
-                <TaskCardDescription  task={task} userIdOwner={userIdOwner} />
-                <div className="task-details__button-return-to-home button-return-to-home">
+                <div className="task-details__page-title page-title" >
+                    <h1><strong>Подробнее о задаче</strong></h1>
+                </div>
+                <div className="task-details__task-card-descr" >
+                    <TaskCardDescription  task={task} userIdOwner={userIdOwner} />
+                </div>
+                <div className="task-details__btn-return-to-home">
                     <button
-                        onClick={handleClickReturn}
-                        className="button-return-to-home"
+                        onClick={ () => history.push('/') }
+                        className="btn-return-to-home"
                     >
                         Вернуться
                     </button>

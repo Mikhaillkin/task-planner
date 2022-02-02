@@ -1,12 +1,12 @@
 import React, {useCallback, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import {useHttp} from "../../hooks/http.hook";
-import { useSelector,useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import {removeCurrentUserTaskAction} from "../../store/tasksReducer";
 
 import cn from 'classnames';
 import { CheckSquareOutlined,DeleteOutlined,EditOutlined } from '@ant-design/icons';
 import './TaskItem.scss';
-import {removeCurrentUserTaskAction} from "../../store/tasksReducer";
 
 
 const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, doneStateItem}) => {
@@ -45,7 +45,7 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, done
                 <span className="item__leftsidecontent">
                     {/*<CheckSquareOutlined className="item__check"  onClick={ () => setDoneItem(prevState => !prevState) } />*/}
                     <CheckSquareOutlined className="item__check"  onClick={ () => updateTaskDoneState(id,userIdOwner) } />
-                    <span className={cn({['item__text']: doneItem})}>
+                    <span className={cn({['item__done']: doneItem} )}>
                         <strong className="item__number">{ `${index + 1})` }</strong>
                         &nbsp;
                         <span>{text}</span>

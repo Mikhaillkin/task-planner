@@ -1,18 +1,24 @@
 .task-details {
+  padding: 3% 5% 5% 5%;
   display: flex;
-  justify-content: center;
-  padding-top: 2rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
-.task-details__subtitle {
-  margin-top: 10px;
+.task-details__page-title {
+  align-self: flex-start;
 }
 
-.task-details__button-return {
-  margin-top: 5rem;
+.task-details__task-card-descr {
+  align-self: flex-start;
+  margin-top: 50px;
 }
 
-.button-return-to-home {
-  font-size: 14px;
-  padding: 15px;
+
+.task-details__btn-return-to-home {
+  align-self: flex-start;
 }
+
+

@@ -1,30 +1,48 @@
 import React from 'react';
 import {useHttp} from "../../hooks/http.hook";
+import {useHistory} from 'react-router-dom';
 
 import './TaskCardDescription.scss';
 
 const TaskCardDescription = ({ task,userIdOwner }) => {
     const {loading} = useHttp();
+    const history = useHistory();
 
     return (
-        <div className="task-details__body">
-            {/*{ !loading && task && 'Здесь jsx код или компонент TaskCardDescription(условно) для вывода полного описания таска.И кидаем в него аргумент task для дальнейшем обработки для вывода информации по таску' }*/}
+        <div className="task-card-descr">
             {!loading && task && (
-                <>
-                    <div><strong>userId:</strong> {userIdOwner}</div>
-                    <div><strong>TaskId:</strong> {task.id}</div>
-                    <div  className="task-details__title">
-                        <strong>Тема:</strong>
-                        {task.title ? `${task.title}` : <strong>Без темы</strong>}
+                <div className="task-card-descr__body-descr body-descr">
+                    <div className="wrap-id" >
+                        <div
+                            className="body-descr__element body-descr__element_userid"
+                        >
+                            <strong>UserId:</strong> {userIdOwner}
+                        </div>
+                        <div
+                            className="body-descr__element body-descr__element_taskid"
+                        >
+                            <strong>TaskId:</strong> {task.id}
+                        </div>
                     </div>
-                    <div  className="task-details__text">
-                        <strong>Описание задачи:</strong>
-                        {`${task.text}`}
+                    <div className="wrap-body">
+                        <div
+                            className="body-descr__element body-descr__element_title"
+                        >
+                            <strong>Тема:</strong> {task.title ? `${task.title}` : <strong>Без темы</strong>}
+                        </div>
+                        <div className="body-descr__element body-descr__element_text" >
+                            <strong>Описание задачи:</strong>
+                            <div>{`${task.text}`}</div>
+                        </div>
                     </div>
-                    <div className="task-details__time">
-                        <strong>Создано:</strong> {`${task.time}`}
+                    <div className="wrap-time">
+                        <div
+                            className="body-descr__element body-descr__element_time"
+                        >
+                            <strong>Создано:</strong> {`${task.time}`}
+                        </div>
                     </div>
-                </>
+                </div>
             )}
         </div>
     );
