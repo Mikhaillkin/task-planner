@@ -1,24 +1,30 @@
-.regform-content {
-  //display: flex;
+.regform {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   //align-items: center;
-  //justify-content: center;
-  padding: 5%;
-  color: black;
 }
 
-.regform-form {
-  width: 100%;
-  label {
-    display: block;
-    font-size: 18px;
-    padding-left: 10px;
-  }
-  input {
-
-  }
+.regform__form-header {
+  height: 60px;
+  font-size: 24px;
+  font-weight: 900;
+  background: #000d24;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  margin-bottom: 10px;
 }
 
-.regform-form {
+.form-header {}
+
+.regform__form-content {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 70px;
   input,textarea {
     width: 100%;
     box-sizing: border-box;
@@ -35,40 +41,39 @@
   }
 }
 
-.regform__btns {
-  display: flex;
-  justify-content: end;
-  .btn-auth {
-    background: white;
-    color: black;
-    //border: 1px solid black;
-    border: none;
-    font-family: inherit;
-    font-size: 18px;
-    &:hover {
-      opacity: 0.9;
-    }
-  }
-  .reg-btn {
-    margin-right: 2rem;
-    color: grey;
+.form-content {}
+
+.form-content__reg-email {}
+
+.form-content__reg-name {}
+
+.form-content__reg-password {}
+
+.form-content__btn-reg {
+  align-self: flex-end;
+}
+
+.btn-reg {
+  background: white;
+  color: black;
+  //border: 1px solid black;
+  border: none;
+  font-family: inherit;
+  font-size: 18px;
+  &:hover {
+    opacity: 0.9;
   }
 }
 
-.regform__header {
-  grid-row: 1/2;
-  font-size: 24px;
-  font-weight: 900;
-  background: #000d24;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 4%;
-  .modal__close {
-    color: white;
-    &:hover {
-      opacity: 0.6;
-    }
-  }
+.regform__change-to-login {
+  height: 50px;
+  padding: 20px;
+}
+
+.btn-to-login {
+  background: white;
+  color: blue;
+  font-size: 15px;
+  border: none;
+  font-family: inherit;
 }

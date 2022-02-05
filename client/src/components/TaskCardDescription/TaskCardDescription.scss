@@ -4,10 +4,9 @@
 }
 
 .body-descr {
-  height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  //justify-content: space-between;  //почему-то не работает без фиксированной высоты body-descr
 }
 
 .body-descr__element {
@@ -23,10 +22,19 @@
   margin-bottom: 10px;
 }
 
-.body-descr__element_text {}
+.body-descr__element_text {
+}
 
-.body-descr__element_time {}
+.body-descr__element_time {
+  margin-bottom: 50px;
+}
 
-.wrap-id {}
-.wrap-body {}
+.wrap-id {
+  margin-bottom: 50px;
+}
+
+.wrap-body {
+  margin-bottom: 50px;
+}
+
 .wrap-time {}

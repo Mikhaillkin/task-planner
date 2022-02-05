@@ -1,24 +1,29 @@
-.loginform-content {
-  //display: flex;
-  //align-items: center;
+.loginform {
+  display: flex;
+  flex-direction: column;
   //justify-content: center;
-  padding: 5%;
-  color: black;
+  //align-items: center;
 }
 
-.loginform-form {
-  width: 100%;
-  label {
-    display: block;
-    font-size: 18px;
-    padding-left: 10px;
-  }
-  input {
-
-  }
+.loginform__form-header {
+  height: 60px;
+  font-size: 24px;
+  font-weight: 900;
+  background: #000d24;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  margin-bottom: 20px;
 }
 
-.loginform-form {
+.form-header {}
+
+.loginform__form-content {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
   input,textarea {
     width: 100%;
     box-sizing: border-box;
@@ -35,40 +40,52 @@
   }
 }
 
-.loginform__btns {
-  display: flex;
-  justify-content: end;
-  .btn-auth {
-    background: white;
-    color: black;
-    //border: 1px solid black;
-    border: none;
-    font-family: inherit;
-    font-size: 18px;
-    &:hover {
-      opacity: 0.9;
-    }
-  }
-  .reg-btn {
-    margin-right: 2rem;
-    color: grey;
+.form-content {}
+
+.form-content__login-email {}
+
+.form-content__login-password {}
+
+.form-content__btn-auth {
+  align-self: flex-end;
+}
+
+.btn-auth {
+  background: white;
+  color: black;
+  //border: 1px solid black;
+  border: none;
+  font-family: inherit;
+  font-size: 18px;
+  &:hover {
+    opacity: 0.9;
   }
 }
 
-.loginform__header {
-  grid-row: 1/2;
-  font-size: 24px;
-  font-weight: 900;
-  background: #000d24;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 4%;
-  .modal__close {
-    color: white;
-    &:hover {
-      opacity: 0.6;
-    }
-  }
+.loginform__change-to-register {
+  height: 50px;
+  padding: 20px;
 }
+
+.btn-to-register {
+  background: white;
+  color: blue;
+  font-size: 15px;
+  border: none;
+  font-family: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
