@@ -45,36 +45,6 @@ const ProfilePage = () => {
     // console.log('User from Server: ',userName);
 
 
-    console.log('Avatar: ',avatar);
-
-
-    const uploadAvatar = useCallback(async () => {
-        try {
-            console.log('Start request');
-
-            const data = await request('/api/auth/uploadavatar', 'POST', { email: userEmail, avatar: avatar }, {
-                Authorization: `Bearer ${token}`
-            });
-
-            console.log('Data from request: ',data);
-
-            console.log('End request');
-
-            // setAvatarFromServer(avatar);
-        } catch (e) {}
-    }, [token,request]);
-
-    // useEffect(() => {
-    //     uploadAvatar();
-    //     console.log('getUser was called');
-    // }, [uploadAvatar]);
-
-
-
-    // const onChangeSingleUploadFile = (e) => {
-    //     setAvatar(e.target.files[0]);
-    // }
-
     return (
         <GridLayout>
             <Header/>
