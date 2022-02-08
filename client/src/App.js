@@ -5,7 +5,6 @@ import AuthPage from "./pages/AuthPage";
 import HomePage from "./pages/HomePage";
 import CreatePage from "./pages/CreatePage";
 import DetailsPage from "./pages/DetailsPage";
-import ProfilePage from "./pages/ProfilePage";
 import PrivateRoute from "./components/PrivateRoute";
 
 // import 'materialize-css/sass/materialize.scss';
@@ -19,7 +18,6 @@ const App = () => {
           <PrivateRoute path='/' exact component={HomePage}/>
           <PrivateRoute path='/create' component={CreatePage}/>
           <PrivateRoute path='/task-details/:id' component={DetailsPage} />
-          <PrivateRoute path='/profile' component={ProfilePage} />
           <Route path='/auth' component={AuthPage}/>
           <Redirect to='/404'/>
         </Switch>

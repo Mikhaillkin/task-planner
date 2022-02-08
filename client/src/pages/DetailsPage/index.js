@@ -39,7 +39,22 @@ const DetailsPage = () => {
         return (
             <GridLayout>
                 <Header/>
-                <Loader alignItems="center"/>
+                <div className="task-details" >
+                    <div className="task-details__page-title page-title" >
+                        <h1><strong>Подробнее о задаче</strong></h1>
+                    </div>
+                    <div className="task-details__task-card-descr">
+                        <Loader alignItems="center"/>
+                    </div>
+                    <div className="task-details__btn-return-to-home">
+                        <button
+                            onClick={ () => history.push('/') }
+                            className="btn-return-to-home"
+                        >
+                            Вернуться
+                        </button>
+                    </div>
+                </div>
                 <Footer/>
             </GridLayout>
         );

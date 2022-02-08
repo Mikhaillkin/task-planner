@@ -1,7 +1,12 @@
 import { useState,useCallback,useEffect } from 'react';
+import {useDispatch, useSelector} from 'react-redux'
+import {cleanTasksCurrentUser} from "../store/tasksReducer";
 
 
 export const useAuth = () => {
+    const dispatch = useDispatch();
+    const currentUserTasks = useSelector( state => state.tasksReducer.currentUserTasks );
+
     const [token,setToken] = useState(null);
     const [userId,setUserId] = useState(null);
     const [userEmail,setUserEmail] = useState(null);
@@ -22,6 +27,8 @@ export const useAuth = () => {
         setUserEmail(null);
         setUserName(null);
         localStorage.removeItem('userData');
+        dispatch(cleanTasksCurrentUser());
+        console.log('currentUserTasks: ',currentUserTasks);
     }, []);
 
     useEffect(() => {

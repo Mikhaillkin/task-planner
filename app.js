@@ -1,12 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-
-
-const multer = require('multer');
-const upload = require('./middleware/upload');
-const User = require('./models/User');
-
 const config = require('./config/default.json');
 
 const app = express();
@@ -32,9 +26,7 @@ async function start () {
     try {
         await mongoose.connect(config.mongoUri, {
             useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true, //добавил
-            useFindAndModify: true  //добавил
+            useUnifiedTopology: true
         })
             .then(console.log('DB Connected'));
         app.listen(
