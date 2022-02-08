@@ -6,8 +6,10 @@ import HomePage from "./pages/HomePage";
 import CreatePage from "./pages/CreatePage";
 import DetailsPage from "./pages/DetailsPage";
 import PrivateRoute from "./components/PrivateRoute";
+import {NotificationContainer} from 'react-notifications';
 
 // import 'materialize-css/sass/materialize.scss';
+import 'react-notifications/lib/notifications.css';
 import './App.scss';
 
 const App = () => {
@@ -21,6 +23,7 @@ const App = () => {
           <Route path='/auth' component={AuthPage}/>
           <Redirect to='/404'/>
         </Switch>
+        <NotificationContainer />
       </>
   )
 }

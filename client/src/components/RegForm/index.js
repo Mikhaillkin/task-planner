@@ -1,21 +1,22 @@
 import React, {useEffect, useState} from 'react';
 import {useHttp} from "../../hooks/http.hook";
-// import { useHistory } from 'react-router-dom';
-// import {useMessage} from "../../hooks/message.hook";
+import {NotificationManager} from 'react-notifications';
 import {useDispatch} from 'react-redux';
+import {changeAuthFormModalAction} from "../../store/modalStateReducer";
+
 
 import './RegForm.scss';
 
+
+
 const RegForm = ({ modalTitle }) => {
-    // const history = useHistory();
     const dispatch = useDispatch();
-    // const message = useMessage();
     const { request,error,clearError,loading } = useHttp();
     const [form, setForm] = useState({
         email:'',password:'',name:''
     });
 
-    const handleClickAuth = () => { dispatch({type:'TOGLLER_FOR_CHANGE_AUTHFORM'}) };
+    const handleClickAuth = () => { dispatch(changeAuthFormModalAction) };
 
     const onChangeRegFormHandler = e => {
         setForm({
@@ -26,9 +27,18 @@ const RegForm = ({ modalTitle }) => {
 
     const fetchRegister = async () => {
         try {
-            const data = await request('/api/auth/register', 'POST', {...form});
-            console.log('After registration process',data);
-            // message(data.message);
+            let regResponse = null;
+            regResponse = await request('/api/auth/register', 'POST', {...form});
+            console.log('After registration process',regResponse);
+
+            setTimeout(() => {
+                document.location.reload();
+            },2000);
+
+
+            NotificationManager.success('Success registration');
+
+
         } catch (e) {}
     }
 
@@ -40,17 +50,14 @@ const RegForm = ({ modalTitle }) => {
     const handlePressEnter = async event => {
         if (event.key === 'Enter') {
             await fetchRegister();
-            // history.push('/');
         }
     }
 
     useEffect(() => {
-        // message(error);
         clearError();
         return () => {                                               // Решение проблемы:
             setForm({ email:'',password: '',name:'' });                 // https://stackoverflow.com/questions/54954385/react-useeffect-causing-cant-perform-a-react-state-update-on-an-unmounted-comp
         };                                                           //
-    // },[error,message,clearError]);
     },[error,clearError]);
 
     return (

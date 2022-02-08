@@ -13,3 +13,6 @@ export const modalStateReducer = (state = defaultState, action) => {
             return state;
     }
 };
+
+
+export const changeAuthFormModalAction = () => ({type:TOGLLER_FOR_CHANGE_AUTHFORM});
