@@ -65,7 +65,6 @@ const TasksList = () => {
                     //     )
                     // }) : <p>No tasks yet</p>
 
-                    // !loading && tasks && tasks.map((task,index) => {
                     !loading && tasks && tasks.map((task,index) => {
                         return (
                             <TaskItem

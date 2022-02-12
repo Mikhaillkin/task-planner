@@ -42,17 +42,46 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, done
     return (
         <>
             <li className="task__item" >
-                <span className="item__leftsidecontent">
-                    {/*<CheckSquareOutlined className="item__check"  onClick={ () => setDoneItem(prevState => !prevState) } />*/}
-                    <CheckSquareOutlined className="item__check"  onClick={ () => updateTaskDoneState(id,userIdOwner) } />
-                    <span className={cn({['item__done']: doneItem} )}>
-                        <strong className="item__number">{ `${index + 1})` }</strong>
-                        &nbsp;
-                        <span>{text}</span>
-                    </span>
-                </span>
-                <EditOutlined className="item__edit" onClick={() => history.push(`/task-details/${userIdOwner}`)} />
-                <DeleteOutlined className="item__delete" onClick={() => deleteTask(id)} />
+                {/*<span className="item__leftsidecontent">*/}
+                {/*    <CheckSquareOutlined className="item__check"  onClick={ () => updateTaskDoneState(id,userIdOwner) } />*/}
+                {/*    <span className={cn({['item__done']: doneItem} )}>*/}
+                {/*        <strong className="item__number">{ `${index + 1})` }</strong>*/}
+                {/*        &nbsp;*/}
+                {/*        <span>{text}</span>*/}
+                {/*    </span>*/}
+                {/*</span>*/}
+                {/*<EditOutlined className="item__edit" onClick={() => history.push(`/task-details/${userIdOwner}`)} />*/}
+                {/*<DeleteOutlined className="item__delete" onClick={() => deleteTask(id)} />*/}
+                <div className="item__leftsidecontent">
+                    <div className="item__check">
+                        <CheckSquareOutlined
+                            className="check"
+                            onClick={ () => updateTaskDoneState(id,userIdOwner) }
+                        />
+                    </div>
+                    <div>
+                        <strong
+                            className={cn("item__numerous",{['item__done']: doneItem} )}
+                        >
+                            {`${index + 1})`}
+                        </strong>
+                    </div>
+                    <div className="item__text">
+                        <span className={cn({['item__done']: doneItem} )}>{text}</span>
+                    </div>
+                </div>
+                <div className="item__edit">
+                    <EditOutlined
+                        className="edit"
+                        onClick={() => history.push(`/task-details/${userIdOwner}`)}
+                    />
+                </div>
+                <div className="item__delete">
+                    <DeleteOutlined
+                        className="delete"
+                        onClick={() => deleteTask(id)}
+                    />
+                </div>
             </li>
         </>
     );

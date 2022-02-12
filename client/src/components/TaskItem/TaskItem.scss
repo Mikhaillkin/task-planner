@@ -1,3 +1,57 @@
+//li {
+//  display: flex;
+//  justify-content: space-between;
+//  align-items: center;
+//  border: 1px solid #ccc;
+//  border-radius: 4px;
+//  margin-bottom: .5rem;
+//  list-style: none;
+//  flex-wrap: nowrap;
+//  padding: .5rem 1rem;
+//  cursor: pointer;
+//}
+//
+//.item__check {
+//  margin-right: 1rem;
+//}
+//
+//.item__leftsidecontent {
+//  min-width: 25rem;
+//  max-width: 25rem;
+//  white-space: nowrap;
+//  overflow: hidden;
+//  text-overflow: ellipsis;
+//}
+//
+//.item__done {
+//  color: gray;
+//  text-decoration: line-through;
+//}
+//
+////.text-border {
+////  white-space: nowrap;
+////  overflow: hidden;
+////  text-overflow: ellipsis;
+////}
+//
+//.item__edit {
+//  //justify-self: end;
+//}
+//
+//.item__delete {
+//  //justify-self: end;
+//}
+//
+//.item__check,.item__edit,.item__delete {
+//  font-size: 32px;
+//  &:hover {
+//    opacity: 0.6;
+//  }
+//}
+
+
+
+
 li {
   display: flex;
   justify-content: space-between;
@@ -11,16 +65,26 @@ li {
   cursor: pointer;
 }
 
-.item__check {
-  margin-right: 1rem;
+.task__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .item__leftsidecontent {
-  min-width: 300px;
-  max-width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 25rem;
+  max-width: 25rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.item__check {
+  margin-right: 1rem;
 }
 
 .item__done {
@@ -28,21 +92,15 @@ li {
   text-decoration: line-through;
 }
 
-//.text-border {
-//  white-space: nowrap;
-//  overflow: hidden;
-//  text-overflow: ellipsis;
-//}
+.item__numerous {}
 
-.item__edit {
-  justify-self: end;
-}
+.item__text {}
 
-.item__delete {
-  justify-self: end;
-}
+.item__edit {}
 
-.item__check,.item__edit,.item__delete {
+.item__delete {}
+
+.check,.edit,.delete {
   font-size: 32px;
   &:hover {
     opacity: 0.6;
