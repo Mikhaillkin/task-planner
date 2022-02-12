@@ -42,16 +42,6 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, done
     return (
         <>
             <li className="task__item" >
-                {/*<span className="item__leftsidecontent">*/}
-                {/*    <CheckSquareOutlined className="item__check"  onClick={ () => updateTaskDoneState(id,userIdOwner) } />*/}
-                {/*    <span className={cn({['item__done']: doneItem} )}>*/}
-                {/*        <strong className="item__number">{ `${index + 1})` }</strong>*/}
-                {/*        &nbsp;*/}
-                {/*        <span>{text}</span>*/}
-                {/*    </span>*/}
-                {/*</span>*/}
-                {/*<EditOutlined className="item__edit" onClick={() => history.push(`/task-details/${userIdOwner}`)} />*/}
-                {/*<DeleteOutlined className="item__delete" onClick={() => deleteTask(id)} />*/}
                 <div className="item__leftsidecontent">
                     <div className="item__check">
                         <CheckSquareOutlined

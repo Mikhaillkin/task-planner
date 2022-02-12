@@ -3,8 +3,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-// const shortid = require('shortid');
-
 
 const taskSchema = new Schema({
     id: { type: Number, required: true, unique: true },

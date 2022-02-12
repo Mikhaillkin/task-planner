@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  //align-items: center;
 }
 
 .regform__form-header {
@@ -28,12 +27,10 @@
   input,textarea {
     width: 100%;
     box-sizing: border-box;
-    //border: 1px solid black;
     background: transparent;
     border-bottom: 1px solid #ccc;
     color: #000;
     border-radius: 2px;
-    //padding: 15px 0 10px;
     padding: 10px;
     margin: 10px 0 10px 0;
     font-family: inherit;
@@ -56,7 +53,6 @@
 .btn-reg {
   background: white;
   color: black;
-  //border: 1px solid black;
   border: none;
   font-family: inherit;
   font-size: 18px;

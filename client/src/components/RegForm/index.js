@@ -55,9 +55,9 @@ const RegForm = ({ modalTitle }) => {
 
     useEffect(() => {
         clearError();
-        return () => {                                               // Решение проблемы:
-            setForm({ email:'',password: '',name:'' });                 // https://stackoverflow.com/questions/54954385/react-useeffect-causing-cant-perform-a-react-state-update-on-an-unmounted-comp
-        };                                                           //
+        return () => {
+            setForm({ email:'',password: '',name:'' });
+        };
     },[error,clearError]);
 
     return (

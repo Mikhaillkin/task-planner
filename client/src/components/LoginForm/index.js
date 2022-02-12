@@ -30,9 +30,9 @@ const LoginForm = ({modalTitle}) => {
     useEffect(() => {
         message(error);
         clearError();
-        return () => {                                               // Решение проблемы:
-            setForm({email: '', password: ''});                 // https://stackoverflow.com/questions/54954385/react-useeffect-causing-cant-perform-a-react-state-update-on-an-unmounted-comp
-        };                                                           //
+        return () => {
+            setForm({email: '', password: ''});
+        };
     }, [error, message, clearError]);
 
     const fetchAuthorization = async () => {

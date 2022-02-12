@@ -94,8 +94,6 @@ router.post(
                 userId: user.id,
             },config.jwtSecret,{ expiresIn: "365 days" });
 
-            // console.log('User.email: ',user.email);
-
             res.status(200).json({
                 token,
                 email: user.email,

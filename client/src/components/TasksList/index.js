@@ -43,7 +43,7 @@ const TasksList = () => {
 
 
     if (!ready) {
-        return <Loader />;  //Определи компонент лоадер и вызови его в return здесь
+        return <Loader />;
     }
 
     return (
@@ -51,20 +51,6 @@ const TasksList = () => {
             <ul className="tasks__items">
                 { tasks.length === 0 ? (<div>No Tasks Yet</div>) : null  }
                 {
-                    // Object.entries(DEFAULTTASKS).length ? (Object.entries(DEFAULTTASKS).map(([key,{id,title,text,time}],index) => {
-                    // tasks.length ? tasks.map(({id,title,text,time},index) => {
-                    //     return (
-                    //         <TaskItem
-                    //             key={id}
-                    //             id={id}
-                    //             title={title}
-                    //             text={text}
-                    //             time={time}
-                    //             index={index}
-                    //         />
-                    //     )
-                    // }) : <p>No tasks yet</p>
-
                     !loading && tasks && tasks.map((task,index) => {
                         return (
                             <TaskItem

@@ -1,12 +1,10 @@
 import React from 'react';
 import {useHttp} from "../../hooks/http.hook";
-import {useHistory} from 'react-router-dom';
 
 import './TaskCardDescription.scss';
 
 const TaskCardDescription = ({ task,userIdOwner }) => {
     const {loading} = useHttp();
-    const history = useHistory();
 
     return (
         <div className="task-card-descr">

@@ -3,8 +3,6 @@ import { useHistory } from 'react-router-dom';
 import { useAuth } from "../../hooks/auth.hook";
 import {useHttp} from "../../hooks/http.hook";
 
-// import {MenuOutlined} from "@ant-design/icons";
-
 import './Header.scss';
 
 
@@ -15,8 +13,6 @@ const Header = () => {
     const { logout } = useAuth();
     const userData = JSON.parse(localStorage.getItem('userData'));
     const token = userData && userData.token ? userData.token : '';
-
-    // console.log(token);
 
 
     const getUserName = useCallback( async () => {
@@ -41,7 +37,6 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header__username">
-                {/*<MenuOutlined className="burger" />*/}
                 <div className="username">
                     { name }
                 </div>

@@ -66,12 +66,6 @@ router.delete('/delete',
 
             await Task.deleteOne({ id:req.body.id }).then(console.log('Запись удалена'));
 
-            // if(!task) {
-            //     return res.status(400).json({ message: 'Такой записи нет' });
-            // }
-
-            // await task.remove().then(console.log('Запись удалена'));
-
             res.status(200).json({ message: 'Удаление прошло успешно' });
         } catch (e) {
             res.status(500).json({ message: "Что-то пошло не так" });
@@ -87,14 +81,6 @@ router.post('/done',
             console.log(req.body.userIdOwner);
 
             const task = await Task.findById(req.body.userIdOwner);
-            // await Task.deleteOne({ id:req.body.id }).then(console.log('Запись удалена'));
-
-
-            // if(task && task.done === false) {
-            //     task.done = true;
-            // } else if (task && task.done === true) {
-            //     task.done = false;
-            // }
 
             task && task.done === false ? task.done = true : task.done = false;
 
@@ -102,26 +88,11 @@ router.post('/done',
 
             await task.save().then(console.log('Task Updated'));
 
-            // res.status(200).json({ message: "Флаг изменен" });
-            res.status(200).json({ task });
+            res.status(200).json({ message: "Флаг изменен" });
         } catch (e) {
             res.status(500).json({ message: "Что-то пошло не так" });
         }
     });
 
-//  /api/task + /taskstate
-// router.get('/taskstate',
-//     auth,
-//     async (req,res) => {
-//         try {
-//             const task = await Task.findById(req.body.userIdOwner);
-//
-//             console.log(task);
-//
-//             res.json(task);
-//         } catch (e) {
-//             res.status(500).json({ message: "Что-то пошло не так" });
-//         }
-//     });
 
 module.exports = router;

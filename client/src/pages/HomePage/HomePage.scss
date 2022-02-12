@@ -1,59 +1,8 @@
-//.home {
-//  grid-template-area: main;
-//  background-color: white;
-//  margin-bottom: 2%;
-//
-//  height: 100%;
-//  display: grid;
-//  grid-template: 100px 1fr / 1fr;
-//  background-color: white;
-//  padding: 10px;
-//  margin: 1%;
-//  padding-top: 2%;
-//  padding-left: 20%;
-//  padding-right: 20%;
-//  padding-bottom: 2%;
-//}
-//
-//.content__title {
-//  grid-row: 1/2;
-//  //align-self: center;
-//  font-size: 32px;
-//  font-weight: 900;
-//}
-//
-//.content__tasks {
-//  grid-row: 2/3;
-//  display: grid;
-//  grid-template: 40px 1fr / 1fr;
-//  row-gap: 5px;
-//}
-//
-//.tasks__add {
-//  grid-row: 1/2;
-//  justify-self: flex-end;
-//}
-//
-//.tasks__items {
-//  grid-row: 2/3;
-//  justify-self: flex-start;
-//}
-//
-//ion-icon {
-//  margin-right: 11px;
-//  font-size: 42px;
-//  &:hover {
-//    opacity: 0.6;
-//    cursor: pointer;
-//  }
-//}
-
 .home {
   padding: 3% 20% 5% 20%;
   display: flex;
   flex-direction: column;
-  //justify-content: space-between;
-  //align-items: center;
+
 }
 
 .home__page-title {}

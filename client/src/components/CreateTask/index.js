@@ -72,8 +72,6 @@ const CreateTask = () => {
                     Authorization: `Bearer ${userData.token}`
                 });
 
-                // dispatch(addCurrentUserTaskAction(data));
-
                 console.log(data);
             } catch (e) {
             }

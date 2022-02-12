@@ -6,7 +6,6 @@
 .body-descr {
   display: flex;
   flex-direction: column;
-  //justify-content: space-between;  //почему-то не работает без фиксированной высоты body-descr
 }
 
 .body-descr__element {
