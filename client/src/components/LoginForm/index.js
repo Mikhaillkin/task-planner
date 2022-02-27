@@ -1,22 +1,28 @@
 import React, {useEffect, useState} from 'react';
 
 import {useHistory} from 'react-router-dom';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useHttp} from "../../hooks/http.hook";
-import {useMessage} from "../../hooks/message.hook";
 import {useAuth} from "../../hooks/auth.hook";
+
+import {setAuthDataAction} from "../../store/dataAuthReducer";
 
 import './LoginForm.scss';
 
+
 const LoginForm = ({modalTitle}) => {
+    const currentUserDataAuthTOKEN = useSelector( state => state.dataAuthReducer?.token );
+    const currentUserDataAuthUSERID = useSelector( state => state.dataAuthReducer?.userId );
     const dispatch = useDispatch();
     const history = useHistory();
-    const message = useMessage();
     const {login} = useAuth();
     const {loading, error, request, clearError} = useHttp();
     const [form, setForm] = useState({
         email: '', password: ''
     });
+
+    console.log('currentUserDataAuthTOKEN in LoginForm: ',currentUserDataAuthTOKEN);
+    console.log('currentUserDataAuthUSERID in LoginForm: ',currentUserDataAuthUSERID);
 
     const onChangeFormHandler = (e) => {
         setForm({...form, [e.target.name]: e.target.value});
@@ -28,16 +34,24 @@ const LoginForm = ({modalTitle}) => {
 
 
     useEffect(() => {
-        message(error);
         clearError();
         return () => {
             setForm({email: '', password: ''});
         };
-    }, [error, message, clearError]);
+    }, [error, clearError]);
 
     const fetchAuthorization = async () => {
         try {
             const data = await request('/api/auth/login', 'POST', {...form});
+
+            console.log('data.token is: ',data.token);
+            console.log('data.userId is: ',data.userId);
+
+            dispatch(setAuthDataAction({
+                token: data.token,
+                userId: data.userId
+            }));
+
             login(data.token, data.userId, data.email,data.name);
         } catch (e) {
         }

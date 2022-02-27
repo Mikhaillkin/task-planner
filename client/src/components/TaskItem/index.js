@@ -20,24 +20,24 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, done
 
     const deleteTask = useCallback(async (id) => {
         try {
-            const data = await request('/api/task/delete', 'DELETE', { id:id }, {
+            await request('/api/task/delete', 'DELETE', { id:id }, {
                 Authorization: `Bearer ${token}`
             });
 
             dispatch(removeCurrentUserTaskAction(id));
             onUpdateTasksList && onUpdateTasksList();
         } catch (e) {}
-    }, [token,request]);
+    }, [token,request,dispatch,onUpdateTasksList]);
 
     const updateTaskDoneState = useCallback( async (id,userIdOwner) => {
         try {
-            const data = await request('api/task/done','POST', { id:id, userIdOwner: userIdOwner }, {
+            await request('api/task/done','POST', { id:id, userIdOwner: userIdOwner }, {
                 Authorization: `Bearer ${token}`
             });
 
             setDoneItem( prevState => !prevState );
         } catch (e) {}
-    } );
+    },[request,token]);
 
     return (
         <>
@@ -51,13 +51,13 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, done
                     </div>
                     <div>
                         <strong
-                            className={cn("item__numerous",{['item__done']: doneItem} )}
+                            className={cn("item__numerous",{'item__done': doneItem} )}
                         >
                             {`${index + 1})`}
                         </strong>
                     </div>
                     <div className="item__text">
-                        <span className={cn({['item__done']: doneItem} )}>{text}</span>
+                        <span className={cn({'item__done': doneItem} )}>{text}</span>
                     </div>
                 </div>
                 <div className="item__edit">

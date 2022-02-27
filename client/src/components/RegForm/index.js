@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {useHttp} from "../../hooks/http.hook";
 import {NotificationManager} from 'react-notifications';
 import {useDispatch} from 'react-redux';
-import {changeAuthFormModalAction} from "../../store/modalStateReducer";
 
 
 import './RegForm.scss';
@@ -16,7 +15,9 @@ const RegForm = ({ modalTitle }) => {
         email:'',password:'',name:''
     });
 
-    const handleClickAuth = () => { dispatch(changeAuthFormModalAction) };
+    const handleClickAuth = () => {
+        dispatch({type: 'TOGLLER_FOR_CHANGE_AUTHFORM'});
+    };
 
     const onChangeRegFormHandler = e => {
         setForm({

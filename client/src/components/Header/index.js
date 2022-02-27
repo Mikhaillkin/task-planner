@@ -1,16 +1,14 @@
 import React, {useState, useCallback, useEffect} from 'react';
-import { useHistory } from 'react-router-dom';
-import { useAuth } from "../../hooks/auth.hook";
 import {useHttp} from "../../hooks/http.hook";
+
+import Exit from "../Exit/index.js";
 
 import './Header.scss';
 
 
 const Header = () => {
-    const history = useHistory();
     const { request } = useHttp()
     const [name,setName] = useState('');
-    const { logout } = useAuth();
     const userData = JSON.parse(localStorage.getItem('userData'));
     const token = userData && userData.token ? userData.token : '';
 
@@ -27,11 +25,11 @@ const Header = () => {
             setName(userName);
         }
         catch (e) {}
-    } ,[token]);
+    } ,[token,request]);
 
     useEffect(() => {
         userData && getUserName();
-    },[getUserName])
+    },[getUserName,userData])
 
 
     return (
@@ -42,21 +40,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="header__exit">
-                {
-                    userData && userData.token ?
-                        (<a
-                            className="logout"
-                            onClick={() => {
-                                logout();
-                                history.push('/auth');
-                            }
-                            }
-                        >
-                            Выйти
-                        </a>)
-                        :
-                        null
-                }
+                <Exit />
             </div>
         </div>
     );

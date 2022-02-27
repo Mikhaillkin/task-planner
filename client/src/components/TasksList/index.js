@@ -16,8 +16,12 @@ const TasksList = () => {
     const [tasks,setTasks] = useState(currentUserTasks);
     const userData = JSON.parse(localStorage.getItem('userData'));
     const token = userData && userData.token ? userData.token : '';
+    const currentUserDataAuthTOKEN = useSelector( state => state.dataAuthReducer?.token );
+    const currentUserDataAuthUSERID = useSelector( state => state.dataAuthReducer?.userId );
 
     console.log('currentUserTasks: ',currentUserTasks);
+    console.log('currentUserDataAuthTOKEN: ',currentUserDataAuthTOKEN);
+    console.log('currentUserDataAuthUSERID: ',currentUserDataAuthUSERID);
 
     const getTasks = useCallback(async () => {
         try {
@@ -30,7 +34,7 @@ const TasksList = () => {
 
             setTasks(data);
         } catch (e) {}
-    }, [token,request]);
+    }, [token,request,dispatch]);
 
     useEffect(() => {
         getTasks();

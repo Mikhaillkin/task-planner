@@ -27,9 +27,10 @@ export const useAuth = () => {
         setUserEmail(null);
         setUserName(null);
         localStorage.removeItem('userData');
+        dispatch({type:'DELETE_AUTH_DATA'});
         dispatch(cleanTasksCurrentUser());
         console.log('currentUserTasks: ',currentUserTasks);
-    }, []);
+    }, [currentUserTasks,dispatch]);
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
