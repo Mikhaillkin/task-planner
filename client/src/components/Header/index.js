@@ -10,7 +10,8 @@ const Header = () => {
     const { request } = useHttp()
     const [name,setName] = useState('');
     const userData = JSON.parse(localStorage.getItem('userData'));
-    const token = userData && userData.token ? userData.token : '';
+    // const token = userData && userData.token ? userData.token : '';
+    const token = userData?.token;
 
 
     const getUserName = useCallback( async () => {

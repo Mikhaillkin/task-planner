@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import {useHistory} from 'react-router-dom';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {useHttp} from "../../hooks/http.hook";
 import {useAuth} from "../../hooks/auth.hook";
 
@@ -11,8 +11,6 @@ import './LoginForm.scss';
 
 
 const LoginForm = ({modalTitle}) => {
-    const currentUserDataAuthTOKEN = useSelector( state => state.dataAuthReducer?.token );
-    const currentUserDataAuthUSERID = useSelector( state => state.dataAuthReducer?.userId );
     const dispatch = useDispatch();
     const history = useHistory();
     const {login} = useAuth();
@@ -21,8 +19,6 @@ const LoginForm = ({modalTitle}) => {
         email: '', password: ''
     });
 
-    console.log('currentUserDataAuthTOKEN in LoginForm: ',currentUserDataAuthTOKEN);
-    console.log('currentUserDataAuthUSERID in LoginForm: ',currentUserDataAuthUSERID);
 
     const onChangeFormHandler = (e) => {
         setForm({...form, [e.target.name]: e.target.value});

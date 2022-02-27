@@ -15,7 +15,8 @@ const TasksList = () => {
     const {loading,request,ready} = useHttp();
     const [tasks,setTasks] = useState(currentUserTasks);
     const userData = JSON.parse(localStorage.getItem('userData'));
-    const token = userData && userData.token ? userData.token : '';
+    // const token = userData && userData.token ? userData.token : '';
+    const token = userData?.token;
     const currentUserDataAuthTOKEN = useSelector( state => state.dataAuthReducer?.token );
     const currentUserDataAuthUSERID = useSelector( state => state.dataAuthReducer?.userId );
 

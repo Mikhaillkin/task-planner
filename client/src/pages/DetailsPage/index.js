@@ -16,7 +16,7 @@ const DetailsPage = () => {
     const {request, ready} = useHttp();
     const [task, setTask] = useState(null);
     const userData = JSON.parse(localStorage.getItem('userData'));
-    const token = userData.token;
+    const token = userData?.token;
     const userIdOwner = useParams().id;
 
 

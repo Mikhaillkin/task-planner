@@ -15,7 +15,8 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, done
     const history = useHistory();
     const {request} = useHttp();
     const userData = JSON.parse(localStorage.getItem('userData'));
-    const token = userData && userData.token ? userData.token : '';
+    // const token = userData && userData.token ? userData.token : '';
+    const token = userData?.token;
 
 
     const deleteTask = useCallback(async (id) => {
