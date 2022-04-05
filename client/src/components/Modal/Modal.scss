@@ -9,15 +9,16 @@
   background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: center;
-  padding-top: 8%;
+  align-items: center;
 
 }
 
 .modal {
   width: 600px;
   height: 450px;
-  border-radius: 5px;
+  border-radius: 24px;
   background: #fff;
+  margin: 0 5px 0 5px;
 }
 
 

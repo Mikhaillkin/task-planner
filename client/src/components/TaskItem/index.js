@@ -42,32 +42,27 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, done
 
     return (
         <>
-            <li className="task__item" >
-                <div className="item__leftsidecontent">
-                    <div className="item__check">
-                        <CheckSquareOutlined
-                            className="check"
-                            onClick={ () => updateTaskDoneState(id,userIdOwner) }
-                        />
-                    </div>
-                    <div>
-                        <strong
-                            className={cn("item__numerous",{'item__done': doneItem} )}
-                        >
-                            {`${index + 1})`}
-                        </strong>
-                    </div>
-                    <div className="item__text">
-                        <span className={cn({'item__done': doneItem} )}>{text}</span>
-                    </div>
+            <li className="task-item">
+                <div className="task-item__column task-item__check">
+                    <CheckSquareOutlined
+                        className={cn(
+                            'check',
+                            {'check-done': doneItem}
+                            )}
+                        onClick={ () => updateTaskDoneState(id,userIdOwner) }
+                    />
                 </div>
-                <div className="item__edit">
+                <div className="task-item__column task-item__content">
+                    <div className="task-item__text">{text}</div>
+                    <div className="task-item__time">{time}</div>
+                </div>
+                <div className="task-item__column task-item__description">
                     <EditOutlined
                         className="edit"
                         onClick={() => history.push(`/task-details/${userIdOwner}`)}
                     />
                 </div>
-                <div className="item__delete">
+                <div className="task-item__column task-item__delete">
                     <DeleteOutlined
                         className="delete"
                         onClick={() => deleteTask(id)}

@@ -4,8 +4,6 @@ import {NotificationManager} from 'react-notifications';
 import {useDispatch} from 'react-redux';
 
 
-import './RegForm.scss';
-
 
 
 const RegForm = ({ modalTitle }) => {
@@ -62,68 +60,83 @@ const RegForm = ({ modalTitle }) => {
     },[error,clearError]);
 
     return (
-        <div className="regform">
-            <div className="regform__form-header form-header">
-                <h1><strong>{modalTitle}</strong></h1>
-            </div>
-            <form action="#" onSubmit={registerHandler} className="regform__form-content form-content">
-                <div className="form-content__reg-email">
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="text"
-                        name='email'
-                        value={form.email}
-                        id="email"
-                        placeholder="Введите ваш email"
-                        onChange={onChangeRegFormHandler}
-                    />
-                </div>
-                <div className="form-content__reg-name">
-                    <label htmlFor="name">Имя</label>
-                    <input
-                        type="text"
-                        name='name'
-                        value={form.name}
-                        id="name"
-                        placeholder="Как Вас зовут?"
-                        onChange={onChangeRegFormHandler}
-                        // onKeyPress={handlePressEnter}
-                    />
-                </div>
-                <div className="form-content__reg-password">
-                    <label htmlFor="password">Пароль</label>
-                    <input
-                        type="password"
-                        name='password'
-                        value={form.password}
-                        id="password"
-                        placeholder="Придумайте пароль"
-                        onChange={onChangeRegFormHandler}
-                        onKeyPress={handlePressEnter}
-                    />
-                </div>
-                <div className="form-content__btn-reg">
-                    <button
-                        type="submit"
-                        className="btn-reg"
-                        disabled={loading}
-                        onClick={registerHandler}
+        <>
+            <div className="reg">
+                <h1 className="reg__header header-modal">
+                    <strong>{modalTitle}</strong>
+                </h1>
+                <div className="reg__body body-modal">
+                    <form
+                        action="#"
+                        onSubmit={registerHandler}
+                        className="reg__regform form-modal"
                     >
-                        Регистрация
-                    </button>
+                        <div className="regform__email email">
+                            <label htmlFor="email">Email</label>
+                            <input
+                                type="text"
+                                name='email'
+                                value={form.email}
+                                id="email"
+                                placeholder="Введите ваш email"
+                                onChange={onChangeRegFormHandler}
+                            />
+                        </div>
+                        <div className="regform__name name">
+                            <label htmlFor="name">Имя</label>
+                            <input
+                                type="text"
+                                name='name'
+                                value={form.name}
+                                id="name"
+                                // placeholder="Как Вас зовут?"
+                                placeholder="Your Name"
+                                onChange={onChangeRegFormHandler}
+                                // onKeyPress={handlePressEnter}
+                            />
+                        </div>
+                        <div className="regform__password password">
+                            <label htmlFor="password">Пароль</label>
+                            <input
+                                type="password"
+                                name='password'
+                                value={form.password}
+                                id="password"
+                                placeholder="Введите пароль"
+                                onChange={onChangeRegFormHandler}
+                                onKeyPress={handlePressEnter}
+                            />
+                        </div>
+                        <div className="regform__buttons form-buttons">
+                            <div className="regform__button">
+                                <button
+                                    type="submit"
+                                    className="button-reg button-submit-form"
+                                    disabled={loading}
+                                    onClick={registerHandler}
+                                >
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div className="reg__change change-form">
+                        <div className="change-form__text">
+                            Have an account?
+                        </div>
+                        <div className="change-form__buttons">
+                            <button
+                                className="change-form__button"
+                                disabled={loading}
+                                onClick={handleClickAuth}
+                            >
+                                Sign In
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </form>
-            <div className="regform__change-to-login">
-                Have an account?&nbsp;
-                <button
-                    className="btn-to-login"
-                    disabled={loading}
-                    onClick={handleClickAuth}
-                >
-                    Sign in
-                </button>
             </div>
-        </div>
+        </>
     );
 };
 

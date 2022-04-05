@@ -1,75 +1,69 @@
-.regform {
+.reg {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-.regform__form-header {
-  height: 60px;
-  font-size: 24px;
-  font-weight: 900;
-  background: #000d24;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding-left: 15px;
-  margin-bottom: 10px;
+.reg__body {
 }
 
-.form-header {}
+.reg__regform {
+}
 
-.regform__form-content {
-  height: 200px;
+.regform__email {
+
+}
+
+.regform__name {
+
+}
+
+.regform__password {
+
+}
+
+.email, .name, .password {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  margin-bottom: 70px;
-  input,textarea {
-    width: 100%;
-    box-sizing: border-box;
+
+  label {
+    font-size: 14px;
+    font-family: inherit;
+    margin: 0 0 10px 0;
+  }
+
+  input {
+    //border:1px solid blue;
+    //font-size: 14px;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    font-family: inherit;
     background: transparent;
     border-bottom: 1px solid #ccc;
     color: #000;
     border-radius: 2px;
     padding: 10px;
-    margin: 10px 0 10px 0;
-    font-family: inherit;
+    margin: 0 0 10px 0;
+  }
+
+  input::placeholder {
     font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
   }
 }
 
-.form-content {}
+.regform__buttons {
 
-.form-content__reg-email {}
-
-.form-content__reg-name {}
-
-.form-content__reg-password {}
-
-.form-content__btn-reg {
-  align-self: flex-end;
 }
 
-.btn-reg {
-  background: white;
-  color: black;
-  border: none;
-  font-family: inherit;
-  font-size: 18px;
-  &:hover {
-    opacity: 0.9;
-  }
+.regform__button {
+
 }
 
-.regform__change-to-login {
-  height: 50px;
-  padding: 20px;
+.button-reg {
+
 }
 
-.btn-to-login {
-  background: white;
-  color: blue;
-  font-size: 15px;
-  border: none;
-  font-family: inherit;
+.reg__change {
 }

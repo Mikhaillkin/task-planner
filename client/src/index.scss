@@ -1,19 +1,81 @@
 //@import '~materialize-css/sass/materialize.scss';
 @import "nullstyle.scss";
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap&subset=cyrillic-ext");
+
+
+#root {
+  min-height: 100%;
+  overflow: hidden;
+  //background-color: #edf4ff;
+  background-color: #edf4ff;
+  display: flex;
+  flex-direction: column;
+}
+
+._container {
+  max-width: 864px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: content-box;
+}
+
+._container__menu {
+  max-width: 864px;
+  margin: 0 auto;
+  //border: 1px solid red;
+}
+
+._container-header,
+._container-footer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: content-box;
+}
 
 body {
   color: #1c1c1c;
+  //color: #5d4787;
   font-family: "Roboto", sans-serif;
-}
-
-.page-title {
-  font-size: 30px;
-  font-weight: 950;
-}
-
-.btn-return-to-home {
   font-size: 14px;
-  padding: 15px;
+  font-weight: 500;
+  height: 100%;
+}
+
+
+
+//*******************HEADER-BLOCK************************//
+
+
+.header-block {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+
+//*******************BUTTONS************************//
+
+
+.body-createtask__button,
+.task-details__button {
+  color: white;
+  width: 100%;
+  min-height: 48px;
+  padding: 0px 24px;
+  align-items: center;
+  border: 0px;
+  border-radius: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  opacity: 1;
+  outline: 0px;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
 }

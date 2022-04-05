@@ -2,12 +2,11 @@ import React from 'react';
 
 import {useHistory} from 'react-router-dom';
 
-import GridLayout from "../../components/GridLayout";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import TasksList from "../../components/TasksList";
 
-import { PlusCircleOutlined } from '@ant-design/icons';
+import {PlusCircleOutlined} from '@ant-design/icons';
 import './HomePage.scss';
 
 const HomePage = () => {
@@ -15,19 +14,22 @@ const HomePage = () => {
 
     return (
         <>
-            <GridLayout>
-                <Header />
-                <div className="home">
-                    <div className="home__page-title page-title" >
-                        <h1><strong>Мои задачи</strong></h1>
+            <Header/>
+            <section className="page__home home">
+                <div className="home__container _container">
+                    <div className="home__body">
+                        <h1 className="home__header header-block">All Tasks</h1>
+                        <div
+                            className="home__add-circle-btn add-circle-btn"
+                            onClick={() => history.push('/create')}
+                        >
+                            <PlusCircleOutlined className="add-circle"/>
+                        </div>
+                        <TasksList/>
                     </div>
-                    <div className="home__add-circle-btn add-circle-btn" onClick={() => history.push('/create')}>
-                        <PlusCircleOutlined className="add-circle" />
-                    </div>
-                    <TasksList />
                 </div>
-                <Footer />
-            </GridLayout>
+            </section>
+            <Footer/>
         </>
     );
 };

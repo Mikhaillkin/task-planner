@@ -1,0 +1,27 @@
+
+header.layout__header {
+  background-color: rgb(118, 69, 217);
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 24px;
+  color: white;
+  padding: 0 0 0 20px;
+}
+main.layout__main {
+  background-color: #edf4ff;
+  flex: 1 1 auto;
+}
+footer.layout__footer {
+  background-color: rgb(118, 69, 217);
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 19px;
+  color: white;
+  padding: 0 0 0 20px;
+}
+
+

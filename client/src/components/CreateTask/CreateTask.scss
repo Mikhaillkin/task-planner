@@ -1,76 +1,108 @@
-.create-task {
+
+.create-page__form {
   width: 100%;
+  margin: 10px 0 0 0;
 }
 
-.create-task__taskadd-form-group {}
 
-.taskadd-form-group {
+
+.form-createtask {
+
+}
+
+
+.form-createtask__body {
+
+}
+
+.body-createtask {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: flex-start;
+  max-width: 864px;
 }
 
-.taskadd-form-group__create-title {
-  width: 100%;
-  label {
-    display: block;
-    font-size: 18px;
-    padding-left: 10px;
-  }
+
+.body-createtask__title,
+.body-createtask__descr {
+  margin: 0 0 10px 0;
   input,textarea {
+    //border: 1px solid red;
     width: 100%;
     box-sizing: border-box;
     background: transparent;
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
-    color: #000;
+    //color: #000;
+    color: rgb(40, 13, 95);
     border-radius: 2px;
     padding: 10px;
     margin: 10px 0 10px 0;
     font-family: inherit;
-    font-size: 14px;
-  }
-}
-
-.create-title {}
-
-.taskadd-form-group__create-text {
-  width: 100%;
-  label {
-    display: block;
+    //font-size: 14px;
     font-size: 18px;
-    padding-left: 10px;
+    font-weight: 700;
+    font-style: italic;
+    cursor: pointer;
   }
-  input,textarea {
-    width: 100%;
-    box-sizing: border-box;
-    background: transparent;
-    border-bottom: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-    color: #000;
-    border-radius: 2px;
-    padding: 10px;
-    margin: 10px 0 10px 0;
-    font-family: inherit;
-    font-size: 14px;
+  input:focus {
+    cursor: text;
+  }
+  textarea:focus {
+    cursor: text;
   }
 }
 
-.create-text {}
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
-.taskadd-form-group__btn-create-task {
-  display: flex;
-  align-self: flex-end;
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+textarea:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+textarea:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+
+.title-createtask {
 }
 
-.btn-create-task {
-  background: white;
-  color: black;
-  //border: 1px solid red;
-  border: none;
-  font-family: inherit;
+.title-createtask__label {
   font-size: 18px;
-  &:hover {
-    opacity: 0.9;
-  }
 }
+
+.title-createtask__input {
+}
+
+
+.descr-createtask {
+}
+
+.descr-createtask__label {
+  font-size: 18px;
+}
+
+.descr-createtask__textarea {
+}
+
+
+.body-createtask__buttons > *:not(:last-child) {
+  margin: 0 0 10px 0;
+}
+
+.body-createtask__button {
+
+}
+
+.body-createtask__button_createtask {
+  background-color: rgb(31, 199, 212);
+}
+
+.body-createtask__button_createtask:hover {
+  opacity: 0.8;
+}
+
+
+
+

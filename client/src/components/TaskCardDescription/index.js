@@ -7,42 +7,30 @@ const TaskCardDescription = ({ task,userIdOwner }) => {
     const {loading} = useHttp();
 
     return (
-        <div className="task-card-descr">
+        <>
             {!loading && task && (
-                <div className="task-card-descr__body-descr body-descr">
-                    <div className="wrap-id" >
-                        <div
-                            className="body-descr__element body-descr__element_userid"
-                        >
+                <div className="full-descr__body body-fulldescr">
+                    <div className="body-fulldescr__id">
+                        <div className="body-fulldescr__id_userid">
                             <strong>UserId:</strong> {userIdOwner}
                         </div>
-                        <div
-                            className="body-descr__element body-descr__element_taskid"
-                        >
+                        <div className="body-fulldescr__id_taskid">
                             <strong>TaskId:</strong> {task.id}
                         </div>
                     </div>
-                    <div className="wrap-body">
-                        <div
-                            className="body-descr__element body-descr__element_title"
-                        >
-                            <strong>Тема:</strong> {task.title ? `${task.title}` : <strong>Без темы</strong>}
-                        </div>
-                        <div className="body-descr__element body-descr__element_text" >
-                            <strong>Описание задачи:</strong>
-                            <div>{`${task.text}`}</div>
-                        </div>
+                    <div className="body-fulldescr__title">
+                        <strong>Тема:</strong> {task.title ? `${task.title}` : <strong>Без темы</strong>}
                     </div>
-                    <div className="wrap-time">
-                        <div
-                            className="body-descr__element body-descr__element_time"
-                        >
-                            <strong>Создано:</strong> {`${task.time}`}
-                        </div>
+                    <div className="body-fulldescr__text">
+                        <strong>Описание задачи:</strong><br/>
+                        {`${task.text}`}
+                    </div>
+                    <div className="body-fulldescr__time">
+                        <strong>Создано:</strong> {`${task.time}`}
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 };
 

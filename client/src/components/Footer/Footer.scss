@@ -1,13 +1,15 @@
 .footer {
-  background-color: #000d24;
+  //background-color: #000d24;
+  background-color: rgb(118,69,217);
+  //background-color: #7b6eac;
   color: white;
+  min-height: 52px;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  grid-template-area: footer;
 }
 
 .footer__copy {
   font-size: 18px;
   margin-left: 25px;
+  letter-spacing: 0.5px;
 }

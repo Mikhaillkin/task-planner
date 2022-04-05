@@ -2,7 +2,6 @@ import React, {useState, useCallback, useEffect} from 'react';
 import {useParams, useHistory} from 'react-router-dom';
 import {useHttp} from "../../hooks/http.hook";
 
-import GridLayout from "../../components/GridLayout";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Loader from "../../components/Loader";
@@ -37,51 +36,65 @@ const DetailsPage = () => {
 
     if (!ready) {
         return (
-            <GridLayout>
+            <>
                 <Header/>
-                <div className="task-details" >
-                    <div className="task-details__page-title page-title" >
-                        <h1><strong>Подробнее о задаче</strong></h1>
+                <section className="page__task-details task-details">
+                    <div className="task-details__container _container">
+                        <div className="task-details__body">
+                            <div className="task-details__body_wrap">
+                                <h1 className="task-details__header header-block">
+                                    Подробнее о задаче
+                                </h1>
+                                <div className="task-details__full-descr" >
+                                    <div className="task-details__task-card-descr">
+                                        <Loader alignItems="center"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="task-details__buttons">
+                                <button
+                                    onClick={ () => history.push('/') }
+                                    className="task-details__button task-details__button_return"
+                                >
+                                    Вернуться
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div className="task-details__task-card-descr">
-                        <Loader alignItems="center"/>
-                    </div>
-                    <div className="task-details__btn-return-to-home">
-                        <button
-                            onClick={ () => history.push('/') }
-                            className="btn-return-to-home"
-                        >
-                            Вернуться
-                        </button>
-                    </div>
-                </div>
+                </section>
                 <Footer/>
-            </GridLayout>
+            </>
         );
     }
 
 
     return (
-        <GridLayout>
-            <Header/>
-            <div className="task-details">
-                <div className="task-details__page-title page-title" >
-                    <h1><strong>Подробнее о задаче</strong></h1>
+        <>
+            <Header />
+            <section className="page__task-details task-details">
+                <div className="task-details__container _container">
+                    <div className="task-details__body">
+                        <div className="task-details__body_wrap">
+                            <h1 className="task-details__header header-block">
+                                Подробнее о задаче
+                            </h1>
+                            <div className="task-details__full-descr full-descr" >
+                                <TaskCardDescription  task={task} userIdOwner={userIdOwner} />
+                            </div>
+                        </div>
+                        <div className="task-details__buttons">
+                            <button
+                                onClick={ () => history.push('/') }
+                                className="task-details__button task-details__button_return"
+                            >
+                                Вернуться
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div className="task-details__task-card-descr" >
-                    <TaskCardDescription  task={task} userIdOwner={userIdOwner} />
-                </div>
-                <div className="task-details__btn-return-to-home">
-                    <button
-                        onClick={ () => history.push('/') }
-                        className="btn-return-to-home"
-                    >
-                        Вернуться
-                    </button>
-                </div>
-            </div>
-            <Footer/>
-        </GridLayout>
+            </section>
+            <Footer />
+        </>
     );
 };
 

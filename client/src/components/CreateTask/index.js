@@ -80,48 +80,68 @@ const CreateTask = () => {
     }
 
     return (
-        <div className="create-task">
-            <form onSubmit={createTask} className="create-task__taskadd-form-group taskadd-form-group">
-                <div className="taskadd-form-group__create-title create-title">
-                    <label
-                        htmlFor="create-title"
-                    >
-                        Тема:
-                    </label>
-                    <input
-                        type="text"
-                        id="create-title"
-                        value={addFormTitle}
-                        placeholder="Введите тему(необязательно)"
-                        onChange={(e) => setAddFormTitle(e.target.value)}
-                    />
-                </div>
-                <div className="taskadd-form-group__create-text create-text">
-                    <label
-                        htmlFor="create-text"
-                    >
-                        Описание задачи:
-                    </label>
-                    <textarea
-                        id="create-text"
-                        cols="30"
-                        rows="10"
-                        placeholder="Напишите задачу..."
-                        value={addFormText}
-                        onChange={(e) => setAddFormText(e.target.value)}
-                        onKeyPress={pressHandler}
-                    />
-                </div>
-                <div className="taskadd-form-group__btn-create-task btn-create-task">
-                    <button
-                        type="submit"
-                        className="btn-create-task"
-                    >
-                        Добавить<SendOutlined/>
-                    </button>
+        <>
+            <form onSubmit={createTask} action="#" className="create-page__form form-createtask">
+                <div className="form-createtask__body body-createtask">
+                    <div className="body-createtask__title title-createtask">
+                        <div className="title-createtask__label">
+                            <label
+                                // htmlFor="create-title"
+                            >
+                                Тема
+                            </label>
+                        </div>
+                        <div className="title-createtask__input">
+                            <input
+                                type="text"
+                                // id="create-title"
+                                value={addFormTitle}
+                                placeholder="Необязательно"
+                                onChange={(e) => setAddFormTitle(e.target.value)}
+                            />
+                        </div>
+                    </div>
+                    <div className="body-createtask__descr descr-createtask">
+                        <div className="descr-createtask__label">
+                            <label
+                                // htmlFor="create-text"
+                            >
+                                Описание задачи
+                            </label>
+                        </div>
+                        <div className="descr-createtask__textarea">
+                            <textarea
+                                // id="create-text"
+                                cols="30"
+                                rows="10"
+                                placeholder="Напишите задачу"
+                                value={addFormText}
+                                onChange={(e) => setAddFormText(e.target.value)}
+                                onKeyPress={pressHandler}
+                            />
+                        </div>
+                    </div>
+                    <div className="body-createtask__buttons">
+                        <div>
+                            <button
+                                type="submit"
+                                className="body-createtask__button body-createtask__button_createtask"
+                            >
+                                Добавить
+                            </button>
+                        </div>
+                        <div>
+                            <button
+                                onClick={ () => history.push('/') }
+                                className="task-details__button task-details__button_return"
+                            >
+                                Вернуться на Главную
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </form>
-        </div>
+        </>
     );
 };
 

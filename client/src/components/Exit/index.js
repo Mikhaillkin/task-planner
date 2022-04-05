@@ -16,13 +16,14 @@ const Exit = () => {
                     (<a
                         href="/#"
                         className="logout"
-                        onClick={() => {
+                        onClick={(e) => {
+                            e.preventDefault();
                             logout();
                             history.push('/auth');
                         }
                         }
                     >
-                        Выйти
+                        Exit
                     </a>)
                     :
                     null

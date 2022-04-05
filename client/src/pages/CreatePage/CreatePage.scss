@@ -1,16 +1,27 @@
+
+section.page__create-page {
+}
+
 .create-page {
-  padding: 3% 5% 5% 5%;
-  color: black;
+  flex: 1 1 auto;
+}
+
+.create-page__container {
+}
+
+.create-page__body {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 10px;
+  margin: 10% 0 5% 0;
+  //box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 0px 5px rgb(238,234,244);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 }
 
-.create-page__page-title {
-  align-self: flex-start;
-}
 
-.create-page__btn-return-to-home {
-  align-self: flex-start;
+h1.create-page__header {
+
 }
