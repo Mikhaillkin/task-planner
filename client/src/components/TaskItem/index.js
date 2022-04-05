@@ -42,7 +42,12 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, done
 
     return (
         <>
-            <li className="task-item">
+            <li
+                className={cn(
+                    'task-item',
+                    {'task-item-done': doneItem}
+                )}
+            >
                 <div className="task-item__column task-item__check">
                     <CheckSquareOutlined
                         className={cn(
