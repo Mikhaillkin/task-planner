@@ -58,7 +58,8 @@ const TaskItem = ({id,title,text,time,userIdOwner,index, onUpdateTasksList, done
                     />
                 </div>
                 <div className="task-item__column task-item__content">
-                    <div className="task-item__text">{text}</div>
+                    {/*<div className="task-item__text">{text}</div>*/}
+                    <div className="task-item__title">{title}</div>
                     <div className="task-item__time">{time}</div>
                 </div>
                 <div className="task-item__column task-item__description">
