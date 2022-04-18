@@ -12,7 +12,7 @@
 .header-wrap-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: 52px;
 }
 
@@ -29,40 +29,43 @@ hr {
 
 }
 
-.header__username {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 1px;
+//.header__username {
+//  font-size: 24px;
+//  font-weight: 700;
+//  letter-spacing: 1px;
+//}
+//
+//
+//.header__exit {
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//  cursor: pointer;
+//}
+
+
+//.exit {
+//}
+
+//.exit__icon {
+//  cursor: pointer;
+//}
+
+//.exit__icon:not(:last-child) {
+//  margin: 0 5px 0 0;
+//}
+
+//.exit__link a {
+//  color: #1c1c1c;
+//  font-weight: 700;
+//  font-size: 22px;
+//  letter-spacing: 1px;
+//}
+
+
+.menu-burger {
+  font-size: 34px;
 }
-
-
-.header__exit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-
-.exit {
-}
-
-.exit__icon {
-  cursor: pointer;
-}
-
-.exit__icon:not(:last-child) {
-  margin: 0 5px 0 0;
-}
-
-.exit__link a {
-  color: #1c1c1c;
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: 1px;
-}
-
-
 
 .header__menu {
   margin: 2px 0 0 0;
@@ -137,6 +140,9 @@ a.menu__link {
   .header-wrap-top {
     display: flex;
     flex-direction: column-reverse;
+  }
+  .header__menu {
+    align-self: flex-start;
   }
   .header__username {
     align-self: center;

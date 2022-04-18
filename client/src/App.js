@@ -5,6 +5,7 @@ import AuthPage from "./pages/AuthPage";
 import HomePage from "./pages/HomePage";
 import CreatePage from "./pages/CreatePage";
 import DetailsPage from "./pages/DetailsPage";
+import SettingsPage from "./pages/SettingsPage";
 import PrivateRoute from "./components/PrivateRoute";
 import {NotificationContainer} from 'react-notifications';
 
@@ -20,6 +21,7 @@ const App = () => {
           <PrivateRoute path='/' exact component={HomePage}/>
           <PrivateRoute path='/create' component={CreatePage}/>
           <PrivateRoute path='/task-details/:id' component={DetailsPage} />
+          <Route path='/settings' component={SettingsPage}/>
           <Route path='/auth' component={AuthPage}/>
           <Redirect to='/404'/>
         </Switch>
