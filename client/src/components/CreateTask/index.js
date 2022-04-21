@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import {useHttp} from "../../hooks/http.hook";
 import {useHistory} from "react-router-dom";
 
-import {SendOutlined} from "@ant-design/icons";
-
 import './CreateTask.scss';
 
 const CreateTask = () => {

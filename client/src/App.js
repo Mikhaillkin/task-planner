@@ -10,7 +10,6 @@ import SettingsPage from "./pages/SettingsPage";
 import PrivateRoute from "./components/PrivateRoute";
 import {NotificationContainer} from 'react-notifications';
 
-// import 'materialize-css/sass/materialize.scss';
 import 'react-notifications/lib/notifications.css';
 import './App.scss';
 

@@ -27,19 +27,16 @@
 .body-createtask__descr {
   margin: 0 0 10px 0;
   input,textarea {
-    //border: 1px solid red;
     width: 100%;
     box-sizing: border-box;
     background: transparent;
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
-    //color: #000;
     color: rgb(40, 13, 95);
     border-radius: 2px;
     padding: 10px;
     margin: 10px 0 10px 0;
     font-family: inherit;
-    //font-size: 14px;
     font-size: 18px;
     font-weight: 700;
     font-style: italic;

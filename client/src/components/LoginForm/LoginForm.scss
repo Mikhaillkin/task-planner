@@ -12,7 +12,6 @@ h1.login__header {
   height: 60px;
   font-size: 24px;
   font-weight: 900;
-  //background: #000d24;
   background-color: #313459;
   color: white;
   display: flex;
@@ -29,7 +28,6 @@ h1.login__header {
 .body-modal {
   min-height: 370px;
   padding: 35px 25px 50px 25px;
-  //border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +35,6 @@ h1.login__header {
 }
 
 form.login__loginform {
-  //border: 1px solid red;
 }
 
 .form-modal {
@@ -60,8 +57,6 @@ form.login__loginform {
     margin: 0 0 10px 0;
   }
   input {
-    //border:1px solid blue;
-    //font-size: 14px;
     font-size: 20px;
     font-weight: 700;
     font-style: italic;
@@ -121,7 +116,6 @@ button.button-auth {
 
 .change-form {
   display: flex;
-  //border: 1px solid red;
   align-self: flex-start;
   align-items: center;
 }
