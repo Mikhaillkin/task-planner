@@ -3,6 +3,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import {useAuth} from "../../hooks/auth.hook";
 
+import './Exit.scss';
+
 const Exit = () => {
     const history = useHistory();
     const { logout } = useAuth();
@@ -23,7 +25,7 @@ const Exit = () => {
                         }
                         }
                     >
-                        Exit
+                        Log out
                     </a>)
                     :
                     null

@@ -3,9 +3,10 @@
   background-color: rgb(118,69,217);
   //background-color: #7b6eac;
   color: white;
-  min-height: 52px;
+  min-height: 60px;
   display: flex;
   align-items: center;
+  z-index: 100;
 }
 
 .footer__copy {

@@ -20,13 +20,19 @@
   box-sizing: content-box;
 }
 
-._container__menu {
-  max-width: 864px;
+//._container__menu {
+//  max-width: 864px;
+//  margin: 0 auto;
+//  //border: 1px solid red;
+//}
+
+._container-header {
+  max-width: 1440px;
   margin: 0 auto;
-  //border: 1px solid red;
+  padding: 0 15px;
+  box-sizing: content-box;
 }
 
-._container-header,
 ._container-footer {
   max-width: 1440px;
   margin: 0 auto;

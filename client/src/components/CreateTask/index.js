@@ -96,7 +96,7 @@ const CreateTask = () => {
                                 type="text"
                                 // id="create-title"
                                 value={addFormTitle}
-                                placeholder="Необязательно"
+                                placeholder="Заголовок"
                                 onChange={(e) => setAddFormTitle(e.target.value)}
                             />
                         </div>
