@@ -1,4 +1,3 @@
-//@import '~materialize-css/sass/materialize.scss';
 @import "nullstyle.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap&subset=cyrillic-ext");
@@ -7,7 +6,6 @@
 #root {
   min-height: 100%;
   overflow: hidden;
-  //background-color: #edf4ff;
   background-color: #edf4ff;
   display: flex;
   flex-direction: column;
@@ -20,20 +18,7 @@
   box-sizing: content-box;
 }
 
-//._container__menu {
-//  max-width: 864px;
-//  margin: 0 auto;
-//  //border: 1px solid red;
-//}
-
-._container-header {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 15px;
-  box-sizing: content-box;
-}
-
-._container-footer {
+._container-footer,._container-header {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 15px;
@@ -42,7 +27,6 @@
 
 body {
   color: #1c1c1c;
-  //color: #5d4787;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 500;
