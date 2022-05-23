@@ -11,7 +11,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import {NotificationContainer} from 'react-notifications';
 
 import 'react-notifications/lib/notifications.css';
-import './App.scss';
 
 const App = () => {
 
